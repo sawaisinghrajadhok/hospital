@@ -2,7 +2,9 @@ package com.sawai.medical.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -38,6 +40,8 @@ public class Ward implements Serializable {
 	@Column(name = "no_of_patient")
 	private Short noOfPatient;
 	
+	@ElementCollection
+	@CollectionTable(name = "WARD_ROOMS")
 	private List<String> roomsForWard;
 	
 	public String getName() {
