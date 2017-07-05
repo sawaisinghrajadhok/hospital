@@ -3,11 +3,13 @@ package com.sawai.medical.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.sawai.medical.model.Department;
 import com.sawai.medical.repository.DepartmentRepository;
 import com.sawai.medical.service.DepartmentService;
 
+@Service
 public class DepartmentServiceImpl implements DepartmentService {
 
 	@Autowired

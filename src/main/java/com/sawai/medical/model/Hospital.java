@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -46,6 +47,7 @@ public class Hospital implements Serializable {
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Department> departments;
 	
+	@Transient
 	private List<Event> events;
 	
 	public Long getId() {

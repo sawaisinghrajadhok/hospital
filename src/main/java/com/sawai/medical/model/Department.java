@@ -2,6 +2,8 @@ package com.sawai.medical.model;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -42,11 +45,11 @@ public class Department implements Serializable {
 
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "DEPARTMENT_WARD", joinColumns = @JoinColumn(name = "DEPARTMENT_ID"), inverseJoinColumns = @JoinColumn(name = "WARD_ID"))
-	private List<Ward> wards;
+	private Set<Ward> wards;
 
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "DEPARTMENT_PHONENUMBER", joinColumns = @JoinColumn(name = "DEPARTMENT_ID"), inverseJoinColumns = @JoinColumn(name = "PHONENUMBER_ID"))
-	private List<PhoneNumber> departmentPhoneNumbers;
+	private Set<PhoneNumber> departmentPhoneNumbers;
 
 	public Long getId() {
 		return id;
@@ -64,11 +67,11 @@ public class Department implements Serializable {
 		this.providers = providers;
 	}
 
-	public List<Ward> getWards() {
+	public Set<Ward> getWards() {
 		return wards;
 	}
 
-	public void setWards(List<Ward> wards) {
+	public void setWards(Set<Ward> wards) {
 		this.wards = wards;
 	}
 
@@ -96,12 +99,11 @@ public class Department implements Serializable {
 		this.departmentName = departmentName;
 	}
 
-	public List<PhoneNumber> getDepartmentPhoneNumbers() {
+	public Set<PhoneNumber> getDepartmentPhoneNumbers() {
 		return departmentPhoneNumbers;
 	}
 
-	public void setDepartmentPhoneNumbers(
-			List<PhoneNumber> departmentPhoneNumbers) {
+	public void setDepartmentPhoneNumbers(Set<PhoneNumber> departmentPhoneNumbers) {
 		this.departmentPhoneNumbers = departmentPhoneNumbers;
 	}
 

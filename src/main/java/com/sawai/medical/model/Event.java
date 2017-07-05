@@ -3,6 +3,7 @@ package com.sawai.medical.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -50,7 +51,7 @@ public class Event implements Serializable {
 
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "EVENT_PHONENUMBER", joinColumns = @JoinColumn(name = "EVENT_ID"), inverseJoinColumns = @JoinColumn(name = "PHONE_NUMBER_ID"))
-	private List<PhoneNumber> phoneNumbers;
+	private Set<PhoneNumber> phoneNumbers;
 
 	public Long getId() {
 		return id;
@@ -84,11 +85,11 @@ public class Event implements Serializable {
 		this.persons = persons;
 	}
 
-	public List<PhoneNumber> getPhoneNumbers() {
+	public Set<PhoneNumber> getPhoneNumbers() {
 		return phoneNumbers;
 	}
 
-	public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
+	public void setPhoneNumbers(Set<PhoneNumber> phoneNumbers) {
 		this.phoneNumbers = phoneNumbers;
 	}
 

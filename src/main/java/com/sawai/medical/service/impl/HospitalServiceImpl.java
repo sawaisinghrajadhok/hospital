@@ -1,11 +1,15 @@
 package com.sawai.medical.service.impl;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.sawai.medical.model.Hospital;
 import com.sawai.medical.repository.HospitalRepository;
 import com.sawai.medical.service.HospitalService;
 
+@Service
 public class HospitalServiceImpl implements HospitalService {
 
 	@Autowired
