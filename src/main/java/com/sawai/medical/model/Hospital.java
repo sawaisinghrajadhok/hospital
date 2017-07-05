@@ -46,14 +46,11 @@ public class Hospital implements Serializable {
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Department> departments;
 	
-	
 	private List<Event> events;
-
-
+	
 	public Long getId() {
 		return id;
 	}
-
 
 	public void setId(Long id) {
 		this.id = id;
