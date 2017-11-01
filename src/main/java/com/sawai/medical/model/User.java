@@ -28,7 +28,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.sawai.medical.audit.AbstractEntityAuditable;
+import com.sawai.medical.config.AbstractEntityAuditable;
 import com.sawai.medical.enums.Role;
 
 @Entity

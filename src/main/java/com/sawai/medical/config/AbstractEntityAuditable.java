@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sawai.medical.audit;
+package com.sawai.medical.config;
 import java.io.Serializable;
 import java.util.Date;
 
