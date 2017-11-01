@@ -20,7 +20,7 @@ public class ProviderServiceImpl implements ProviderService {
 	
 	@Override
 	public Provider create(Provider provider) {
-		Float totalExperience = createTotalExperience(provider);
+		//Float totalExperience = createTotalExperience(provider);
 		return providerRepository.save(provider);
 	}
 

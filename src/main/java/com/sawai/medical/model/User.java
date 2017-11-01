@@ -28,6 +28,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sawai.medical.audit.AbstractEntityAuditable;
 import com.sawai.medical.enums.Role;
 
 @Entity
@@ -35,7 +36,7 @@ import com.sawai.medical.enums.Role;
 @TableGenerator(name = "USER_GEN", initialValue = 0, allocationSize = 1)
 @JsonIdentityInfo(property = "id" , scope = User.class, generator=ObjectIdGenerators.PropertyGenerator.class)
 @Inheritance(strategy=InheritanceType.JOINED) 
-public class User implements UserDetails {
+public class User extends AbstractEntityAuditable<User, Long>implements UserDetails {
 
 	private static final long serialVersionUID = 6207581915480013833L;
 	
